@@ -1,0 +1,32 @@
+function filteredSignal = highpassFilter(signal, alpha)
+
+    //-----------------------------------
+    // Signal Length
+    //-----------------------------------
+
+    N = length(signal);
+
+    //-----------------------------------
+    // Initialize Output
+    //-----------------------------------
+
+    filteredSignal = zeros(signal);
+
+    //-----------------------------------
+    // First Sample
+    //-----------------------------------
+
+    filteredSignal(1) = signal(1);
+
+    //-----------------------------------
+    // High-pass Filtering
+    //-----------------------------------
+
+    for i = 2:N
+
+        filteredSignal(i) = alpha * ...
+            (filteredSignal(i-1) + signal(i) - signal(i-1));
+
+    end
+
+endfunction

@@ -1,0 +1,5 @@
+function exportPlotCallback()
+
+    exportPlot();
+
+endfunction
