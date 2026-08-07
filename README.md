@@ -1,120 +1,174 @@
+<div align="center">
+
 # 🫀 Interactive Medical Signal Analysis Workbench
 
-An interactive GUI-based ECG Signal Analysis Workbench developed using **Scilab** for visualization, analysis, filtering, and processing of Electrocardiogram (ECG) signals. The application provides an intuitive graphical interface for exploring ECG data, performing signal processing operations, visualizing frequency-domain characteristics, detecting R-peaks, and exporting processed results.
+### An Open-Source GUI-Based Educational Biomedical Signal Analysis Platform Developed Using Scilab
+
+<img src="screenshots/main_gui.png" width="900"/>
+
+![Scilab](https://img.shields.io/badge/Scilab-2025-blue)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-success)
+![Language](https://img.shields.io/badge/Language-Scilab-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Biomedical](https://img.shields.io/badge/Domain-Biomedical%20Signal%20Processing-red)
+
+</div>
 
 ---
 
-## 📌 Overview
+# 📖 Overview
 
-Electrocardiogram (ECG) analysis is an essential part of cardiovascular diagnosis. Raw ECG signals often contain noise and require processing before meaningful interpretation. This project provides a user-friendly Scilab GUI that enables users to load ECG datasets, visualize heartbeats, apply digital filters, perform frequency analysis, detect signal peaks, and analyze statistical characteristics—all without writing Scilab commands.
+The **Interactive Medical Signal Analysis Workbench** is an open-source graphical application developed entirely using **Scilab** to provide an interactive environment for **ECG signal visualization, preprocessing, statistical analysis, frequency-domain analysis, and digital signal processing**.
 
-The project demonstrates the integration of GUI development with digital signal processing techniques in Scilab.
+Unlike traditional script-based signal processing workflows, this application integrates multiple DSP operations into a single intuitive graphical interface, enabling users to explore biomedical signals without writing Scilab commands.
+
+The workbench is designed primarily for **education**, **research prototyping**, and **laboratory demonstrations**, making biomedical signal processing concepts more interactive and accessible.
 
 ---
 
-# ✨ Features
+# 🎯 Problem Statement
 
-### 📂 Data Handling
+Electrocardiogram (ECG) signals are widely used to assess cardiac health. However, raw ECG recordings frequently contain baseline drift, motion artifacts, and high-frequency noise that require preprocessing before meaningful interpretation.
 
-- Load ECG data from CSV files
-- Navigate through individual heartbeats
-- Reset signal to its original state
+Most available solutions are either:
 
-### 📈 Signal Visualization
+- Proprietary software requiring expensive licenses
+- Script-based environments requiring programming expertise
+- Clinical systems not intended for education
 
-- Interactive ECG waveform plotting
-- Zoom In / Zoom Out
-- Pan Left / Pan Right
+There is a need for an interactive, open-source application that combines ECG visualization and classical DSP techniques within a single graphical environment.
+
+This project addresses that need through a modular GUI developed using Scilab.
+
+---
+
+# 💡 Key Features
+
+## 📂 Dataset Management
+
+- Load ECG datasets from CSV files
+- Automatic initialization of analysis environment
+
+---
+
+## 📈 Interactive ECG Visualization
+
+- Real-time ECG plotting
+- Beat-wise visualization
+- Dynamic graph updates
+
+---
+
+## 🔍 Navigation
+
+- Next Beat
+- Previous Beat
+
+---
+
+## 🔎 View Controls
+
+- Zoom In
+- Zoom Out
 - Reset Zoom
+- Pan Left
+- Pan Right
 - Reset Plot
 
-### 📊 Signal Analysis
+---
 
-- ECG Statistics
-  - Mean
-  - Maximum
-  - Minimum
-  - Standard Deviation
-  - Number of Samples
-- FFT Spectrum Analysis
-- Dominant Frequency Detection
-
-### ❤️ Peak Detection
-
-- Automatic R-Peak Detection
-- Peak Highlighting on ECG Signal
-
-### 🎛 Signal Processing Filters
+## ⚙️ Signal Processing
 
 - Moving Average Filter
 - Median Filter
 - Low-pass Filter
 - High-pass Filter
 
-### 📤 Export
+---
 
-- Export Processed ECG Signal as CSV
-- Export ECG Plot as PNG
+## 📊 Signal Analysis
 
-### 🖥 Graphical User Interface
-
-- Interactive Control Panels
-- Organized Layout
-- Real-time Statistics Panel
-- Dynamic Graph Updates
+- Fast Fourier Transform (FFT)
+- Dominant Frequency Detection
+- Peak Detection
+- Statistical Feature Extraction
 
 ---
 
-# 🏗 Project Architecture
+## 📤 Export
+
+- Export Processed ECG Signal (CSV)
+- Export ECG Plot (PNG)
+
+---
+
+# 🏗 Software Architecture
 
 ```
-Interactive-Medical-Signal-Analysis-Workbench
-│
+                    ECG CSV Dataset
+                           │
+                           ▼
+                  Open CSV Module
+                           │
+                           ▼
+                  Global Data Manager
+                           │
+                           ▼
+                    Graphical User Interface
+ ┌────────────────────────────────────────────────────┐
+ │                                                    │
+ │   Left Panel      Plot Area      Right Panel       │
+ │                                                    │
+ └────────────────────────────────────────────────────┘
+                           │
+                           ▼
+                 Signal Processing Layer
+      ┌────────────────────────────────────┐
+      │ FFT │ Peak │ Filters │ Statistics  │
+      └────────────────────────────────────┘
+                           │
+                           ▼
+                    Visualization Layer
+                           │
+                           ▼
+                 CSV Export / PNG Export
+```
+
+---
+
+# 📂 Folder Structure
+
+```
+Interactive-Medical-Signal-Analysis-Workbench/
+
 ├── callbacks/
-│   ├── open_csv.sci
-│   ├── next_beat.sci
-│   ├── previous_beat.sci
-│   ├── zoom_in.sci
-│   ├── zoom_out.sci
-│   ├── reset_zoom.sci
-│   ├── reset_plot.sci
-│   ├── pan_left.sci
-│   ├── pan_right.sci
-│   ├── fft_callback.sci
-│   ├── peak_detection_callback.sci
-│   ├── moving_average_callback.sci
-│   ├── median_filter_callback.sci
-│   ├── lowpass_filter_callback.sci
-│   ├── highpass_filter_callback.sci
-│   └── export_callback.sci
-│
 ├── gui/
 ├── plotting/
 ├── processing/
 ├── utils/
 ├── datasets/
 ├── screenshots/
-├── main.sce
-└── README.md
+├── README.md
+└── main.sce
 ```
 
 ---
 
-# 🛠 Technologies Used
+# 🖥 GUI Overview
 
-- Scilab
-- Scilab GUI Components (uicontrol)
-- Digital Signal Processing
-- FFT
-- Biomedical Signal Processing
-- CSV Data Processing
+| Module | Description |
+|---------|-------------|
+| Left Control Panel | Dataset loading, navigation, view controls |
+| Plot Area | ECG visualization |
+| Right Control Panel | Signal processing and analysis |
+| Statistics Panel | Beat information and computed statistics |
 
 ---
 
-# 📊 Signal Processing Techniques
+# 🧠 Implemented Algorithms
 
-The application implements multiple ECG signal processing algorithms:
-
+- Statistical Analysis
+- Peak Detection
 - Fast Fourier Transform (FFT)
 - Moving Average Filtering
 - Median Filtering
@@ -125,129 +179,109 @@ The application implements multiple ECG signal processing algorithms:
 
 ---
 
-# System Architecture
-```
-System Architecture.png
-```
-
 # 📷 Application Preview
 
+Add screenshots here after uploading them.
 
 ### Main Interface
 
 ```
-screenshots/main_window.png
+screenshots/main_gui.png
 ```
 
 ### FFT Analysis
 
 ```
-screenshots/FFT spectrum.png
+screenshots/fft_analysis.png
 ```
 
 ### Peak Detection
 
 ```
-screenshots/Peak Detection.png
+screenshots/peak_detection.png
 ```
 
 ### Filtered ECG Signal
 
-#### Low Pass Filter
 ```
-screenshots/Low pass filter.png
-```
-
-#### High Pass Filter
-```
-screenshots/High pass filter.png
-```
-#### Moving Average Filter
-```
-screenshots/Moving average filter.png
-```
-
-#### Median Filter
-
-```
-screenshots/Median filter.png
+screenshots/filtered_signal.png
 ```
 
 ---
 
-# 🚀 How to Run
+# 🚀 Installation
 
 1. Install Scilab.
 2. Clone this repository.
-
-```
-git clone https://github.com/YOUR_USERNAME/Interactive-Medical-Signal-Analysis-Workbench.git
-```
-
 3. Open Scilab.
-4. Open the project folder.
-5. Execute
+4. Navigate to the project directory.
+5. Execute:
 
-```
-main.sce
+```scilab
+exec("main.sce",-1)
 ```
 
 6. Click **Open CSV**.
-7. Load an ECG dataset.
-8. Explore the available analysis tools.
+7. Select an ECG dataset.
+8. Start exploring the signal.
 
 ---
 
-# 📋 GUI Workflow
+# 📷 Sample Results
 
-```
-Load CSV
-      │
-      ▼
-Display ECG Signal
-      │
-      ▼
-Navigate Heartbeats
-      │
-      ▼
-Zoom / Pan
-      │
-      ▼
-Apply Filters
-      │
-      ▼
-Peak Detection
-      │
-      ▼
-FFT Analysis
-      │
-      ▼
-Export Results
-```
+### Main GUI
+
+*(Insert Screenshot)*
 
 ---
 
-# 📈 Future Improvements
+### Peak Detection
 
-- Multi-lead ECG Support
-- Wavelet Transform Analysis
-- Automatic Arrhythmia Classification
-- Real-time ECG Monitoring
-- ECG Annotation Tools
-- AI-based Disease Prediction
-- DICOM Integration
-- Advanced Biomedical Visualization
+*(Insert Screenshot)*
 
 ---
 
-# 🎯 Applications
+### FFT Spectrum
+
+*(Insert Screenshot)*
+
+---
+
+### Filtered ECG
+
+*(Insert Screenshot)*
+
+---
+
+# 🎓 Educational Applications
 
 - Biomedical Signal Processing
-- Medical Education
-- ECG Visualization
-- Digital Signal Processing Learning
-- Engineering Laboratory Demonstrations
-- Biomedical Engineering Projects
+- Digital Signal Processing
+- Biomedical Engineering Laboratories
+- Engineering Education
+- Research Prototyping
+- GUI Development using Scilab
+
+---
+
+# 🔮 Future Scope
+
+- Real-time ECG Acquisition
+- Heart Rate Variability Analysis
+- Multi-lead ECG Support
+- AI-assisted Arrhythmia Classification
+- Wavelet-based Signal Denoising
+- ECG Annotation Tools
+- Automatic Report Generation
+
+---
+
+# 📚 References
+
+1. Scilab Documentation — https://help.scilab.org
+2. PhysioNet MIT-BIH Arrhythmia Database — https://physionet.org
+3. Oppenheim, A. V., Schafer, R. W. *Discrete-Time Signal Processing.*
+4. Webster, J. G. *Medical Instrumentation: Application and Design.*
 
 ---
 
@@ -261,15 +295,4 @@ Amrita Vishwa Vidyapeetham
 
 ---
 
-# 📜 License
-
-This project is released under the **MIT License**.
-
----
-
-# 🙏 Acknowledgements
-
-- Scilab Team
-- GUIVerse Hackathon Organizers
-- PhysioNet MIT-BIH Arrhythmia Dataset
-- Amrita Vishwa Vidyapeetham
+⭐ If you found this project useful, consider giving the repository a star.
