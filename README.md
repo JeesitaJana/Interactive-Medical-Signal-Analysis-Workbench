@@ -125,6 +125,11 @@ The application implements multiple ECG signal processing algorithms:
 
 ---
 
+# System Architecture
+```
+System Architecture.png
+```
+
 # 📷 Application Preview
 
 
