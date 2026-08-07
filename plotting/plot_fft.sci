@@ -4,33 +4,24 @@ function plotFFT(frequency,...
                  maxMagnitude,...
                  beatNumber)
 
-    //-----------------------------------
     // Create a new figure
-    //-----------------------------------
 
     scf();
 
-    //-----------------------------------
     // Plot FFT
-    //-----------------------------------
 
     plot(frequency, magnitude);
     
-    //-----------------------------------
 // Display ECG Frequency Range
-//-----------------------------------
 
     a = gca();
     a.data_bounds = [0, 0; 50, max(magnitude)];
-    //-----------------------------------
+
 // Mark Dominant Frequency
-//-----------------------------------
 
     plot(dominantFrequency, maxMagnitude, "ro");
 
-    //-----------------------------------
     // Labels
-    //-----------------------------------
 
     xlabel("Frequency (Hz)");
     ylabel("Magnitude");
@@ -43,16 +34,16 @@ function plotFFT(frequency,...
     xgrid();
     legend("FFT Magnitude");
 
-    //-----------------------------------
+
     // Make line thicker
-    //-----------------------------------
+
 
     e = gce();
     e.children.thickness = 2;
     
-    //-----------------------------------
+
 // Label Dominant Frequency
-//-----------------------------------
+
 
     xstring( ...
         dominantFrequency + 1, ...

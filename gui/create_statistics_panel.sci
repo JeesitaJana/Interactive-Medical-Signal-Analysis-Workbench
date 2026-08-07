@@ -9,17 +9,13 @@ function createStatisticsPanel()
     global TXT_STD;
     global TXT_DOM_FREQ;
 
-    //-----------------------------------
     // Statistics Frame
-    //-----------------------------------
 
     uicontrol(...
         "style","frame",...
         "position",[220 56 840 160]);
 
-    //-----------------------------------
     // Title
-    //-----------------------------------
 
     uicontrol(...
         "style","text",...
@@ -29,9 +25,8 @@ function createStatisticsPanel()
         "horizontalalignment","center",...
         "position",[500 175 280 25]);
 
-    //-----------------------------------
+
     // First Row
-    //-----------------------------------
 
     TXT_BEAT = uicontrol(...
         "style","text",...
@@ -57,9 +52,7 @@ function createStatisticsPanel()
         "horizontalalignment","left",...
         "string","Maximum :");
 
-    //-----------------------------------
     // Second Row
-    //-----------------------------------
 
     TXT_MIN = uicontrol(...
         "style","text",...

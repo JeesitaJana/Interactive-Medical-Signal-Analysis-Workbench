@@ -4,14 +4,14 @@ function createControlPanel()
 buttonWidth  = 170;
 buttonHeight = 35;
 
-//====================================================
+
 // LEFT PANEL
-//====================================================
+
 
 xLeft = 20;
 y = 575;
 
-//---------------- FILE ----------------//
+// FILE //
 
 uicontrol(...
 "style","text",...
@@ -28,7 +28,7 @@ uicontrol("style","pushbutton",...
 "position",[xLeft y buttonWidth buttonHeight],...
 "callback","openCsvCallback()");
 
-//---------------- NAVIGATION ----------------//
+// NAVIGATION //
 
 y = y-65;
 
@@ -54,7 +54,7 @@ uicontrol("style","pushbutton",...
 "position",[xLeft y buttonWidth buttonHeight],...
 "callback","previousBeatCallback()");
 
-//---------------- VIEW ----------------//
+// VIEW //
 
 y = y-65;
 
@@ -109,14 +109,14 @@ uicontrol("style","pushbutton",...
 "callback","resetPlotCallback()");
 
 
-//====================================================
+
 // RIGHT PANEL
-//====================================================
+
 
 xRight = 1090;
 y = 575;
 
-//---------------- ANALYSIS ----------------//
+// ANALYSIS //
 
 uicontrol(...
 "style","text",...
@@ -140,7 +140,7 @@ uicontrol("style","pushbutton",...
 "position",[xRight y buttonWidth buttonHeight],...
 "callback","peakDetectionCallback()");
 
-//---------------- FILTERS ----------------//
+// FILTERS //
 
 y = y-65;
 
@@ -180,7 +180,7 @@ uicontrol("style","pushbutton",...
 "position",[xRight y buttonWidth buttonHeight],...
 "callback","highpassFilterCallback()");
 
-//---------------- TOOLS ----------------//
+// TOOLS //
 
 y = y-65;
 

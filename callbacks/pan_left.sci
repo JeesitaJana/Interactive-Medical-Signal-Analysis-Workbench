@@ -5,17 +5,16 @@ function panLeftCallback()
     global ECG_DATA;
     global CURRENT_BEAT;
 
-    //-----------------------------------
+    
     // Don't pan if full signal is visible
-    //-----------------------------------
+   
 
     if VIEW_START == 1 & VIEW_END == 187 then
         return;
     end
 
-    //-----------------------------------
+  
     // Pan left
-    //-----------------------------------
 
     panStep = 10;
 

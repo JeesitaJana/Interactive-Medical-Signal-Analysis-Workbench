@@ -127,30 +127,45 @@ The application implements multiple ECG signal processing algorithms:
 
 # 📷 Application Preview
 
-Add screenshots here after uploading them.
 
 ### Main Interface
 
 ```
-screenshots/main_gui.png
+screenshots/main_window.png
 ```
 
 ### FFT Analysis
 
 ```
-screenshots/fft_analysis.png
+screenshots/FFT spectrum.png
 ```
 
 ### Peak Detection
 
 ```
-screenshots/peak_detection.png
+screenshots/Peak Detection.png
 ```
 
 ### Filtered ECG Signal
 
+#### Low Pass Filter
 ```
-screenshots/filtered_signal.png
+screenshots/Low pass filter.png
+```
+
+#### High Pass Filter
+```
+screenshots/High pass filter.png
+```
+#### Moving Average Filter
+```
+screenshots/Moving average filter.png
+```
+
+#### Median Filter
+
+```
+screenshots/Median filter.png
 ```
 
 ---

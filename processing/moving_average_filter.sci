@@ -1,26 +1,26 @@
 function filteredSignal = movingAverageFilter(signal, windowSize)
 
-    //-----------------------------------
+
     // Length of signal
-    //-----------------------------------
+
 
     N = length(signal);
 
-    //-----------------------------------
+
     // Initialize output
-    //-----------------------------------
+
 
     filteredSignal = zeros(signal);
 
-    //-----------------------------------
+
     // Half window
-    //-----------------------------------
+
 
     halfWindow = floor(windowSize / 2);
 
-    //-----------------------------------
+
     // Apply Moving Average
-    //-----------------------------------
+
 
     for i = 1:N
 

@@ -1,6 +1,6 @@
-// =========================================
+
 // Main Application Window
-// =========================================
+
 
 // Create the main application window
 mainWindow = figure();
@@ -53,9 +53,7 @@ title("Sample Medical Signal");
 // Grid
 xgrid();
 
-// =========================================
 // Open CSV Button
-// =========================================
 
 openButton = uicontrol( ...
     "style", "pushbutton", ...

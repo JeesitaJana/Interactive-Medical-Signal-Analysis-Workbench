@@ -27,9 +27,9 @@ function plotFilteredSignal(signal, beatNumber, beatClass)
     e = gce();
     e.children.thickness = 2;
     
-    //-----------------------------------
+   
 // Detect Peak
-//-----------------------------------
+
 
     [peakValue,peakIndex] = detectPeak(signal);
 
